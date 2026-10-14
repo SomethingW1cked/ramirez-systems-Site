@@ -5,6 +5,24 @@ body {
     margin: 0;
 }
 
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-dim);
+  position: relative;
+  transition: color 0.2s var(--ease);
+}
+
 header {
     border-bottom: 1px solid #374151;
     padding: 20px;
