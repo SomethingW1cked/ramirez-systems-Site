@@ -1,31 +1,45 @@
-body {
-    background-color: #111827;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
+:root {
+    --background: #000000;
+    --panel: #0f0f0f;
+    --border: #1f1f1f;
+
+    --accent: #00ff9c;
+    --accent-hover: #00d683;
+
+    --text: #e5e5e5;
+    --text-dim: #8a8a8a;
+
+    --font-main: "Inter", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+
+    --ease: ease;
 }
+
+/* ===== Global ===== */
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-main);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
 
 .site-header {
-  border-bottom: 1px solid var(--border);
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.nav-link {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-dim);
-  position: relative;
-  transition: color 0.2s var(--ease);
+    border-bottom: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 header {
-    border-bottom: 1px solid #374151;
-    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
 }
 
 .header-content {
@@ -34,31 +48,111 @@ header {
     align-items: center;
 }
 
+/* ===== Branding ===== */
+
 .brand {
-    color: #60a5fa;
+    color: var(--accent);
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: color 0.2s var(--ease);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+.brand:hover {
+    color: var(--accent-hover);
 }
+
+/* ===== Navigation ===== */
+
+nav a,
+.nav-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    transition: color 0.2s var(--ease);
+}
+
+nav a:hover,
+.nav-link:hover {
+    color: var(--accent);
+}
+
+/* ===== Hero Section ===== */
 
 .hero {
-    padding: 50px;
+    padding: 100px 80px;
+    max-width: 1000px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 10px;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .hero h2 {
-    color: #60a5fa;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
 }
+
+.hero p {
+    max-width: 700px;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+}
+
+/* ===== Cards ===== */
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 20px;
+    transition: border-color 0.2s var(--ease);
+}
+
+.card:hover {
+    border-color: var(--accent);
+}
+
+/* ===== Buttons ===== */
+
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 20px;
+
+    background: transparent;
+    border: 1px solid var(--accent);
+
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+
+    transition: all 0.2s var(--ease);
+}
+
+.button:hover {
+    background: var(--accent);
+    color: black;
+}
+
+/* ===== Highlights ===== */
+
 .emphasize {
-    color: #60a5fa;
-    font-weight: bold;
+    color: var(--accent);
+    font-weight: 700;
 }
